@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Teaser | OHLMEC - Mechanical Fitter and Boilermaker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 5px auto;
+            padding: 5px;
+            background-color: #f0f0f0;
+        }
+        .job-teaser {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border: 2px solid #003366;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            background-color: #003366;
+            padding: 10px;
+        }
+        .logo {
+            width: 150px;
+            height: auto;
+            margin-right: 10px;
+        }
+        .job-title {
+            color: white;
+            font-size: 1.4em;
+            font-weight: bold;
+            margin: 0;
+            flex-grow: 1;
+            text-align: left;
+            padding-left: 20px;
+        }
+        .content {
+            padding: 5px;
+            position: relative;
+            overflow: hidden;
+            min-height: 160px;
+        }
+        .slide {
+            display: none;
+            animation: fadeEffect 0.5s;
+        }
+        .slide.active {
+            display: block;
+        }
+        @keyframes fadeEffect {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        .nav-dots {
+            text-align: center;
+            margin-top: 2px;
+        }
+        .dot {
+            height: 8px;
+            width: 8px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 3px;
+            cursor: pointer;
+        }
+        .dot.active {
+            background-color: #003366;
+        }
+        .full-ad-toggle {
+            text-align: right;
+            padding: 2px 5px;
+            background-color: #f0f0f0;
+            font-size: 0.9em;
+        }
+        .full-job-ad {
+            display: none;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-top: 1px solid #ddd;
+            font-size: 0.9em;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .apply-button {
+            display: block;
+            width: 100%;
+            padding: 8px;
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+        .apply-button:hover {
+            background-color: #002244;
+        }
+        h2 {
+            margin: 5px 0;
+            color: #003366;
+            font-size: 1.1em;
+        }
+        ul {
+            margin: 3px 0;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 2px;
+        }
+        p {
+            margin: 3px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="job-teaser">
+        <div class="header">
+            <img src="https://imgur.com/QOt9axm.png" alt="OHLMEC Logo" class="logo">
+            <h1 class="job-title">Mechanical Fitter and Boilermaker</h1>
+        </div>
+        <div class="content">
+            <div class="slide active">
+                <h2>About OHLMEC</h2>
+                <p>Join a growing WA company with 100+ workforce:</p>
+                <ul>
+                    <li>🛠️ Project management and consulting</li>
+                    <li>🏗️ Specialised maintenance and fabrication</li>
+                    <li>🏢 Construction support and structural integrity</li>
+                </ul>
+            </div>
+            <div class="slide">
+                <h2>Core Values</h2>
+                <ul>
+                    <li>🛡️ Safety is an attitude</li>
+                    <li>🏆 Quality across all levels</li>
+                    <li>🤝 A culture you're proud to be part of</li>
+                    <li>💼 Integrity is everything</li>
+                </ul>
+            </div>
+            <div class="slide">
+                <h2>Key Requirements</h2>
+                <ul>
+                    <li>🎓 Australian Recognised Trade Qualification</li>
+                    <li>🚗 Valid manual Australian Driver's licence</li>
+                    <li>🏅 Confined space, Working at heights, White Card</li>
+                    <li>⚙️ Proven experience in a similar role</li>
+                </ul>
+            </div>
+            <div class="slide">
+                <h2>Benefits</h2>
+                <ul>
+                    <li>💰 Attractive remuneration</li>
+                    <li>📈 Career development opportunities</li>
+                    <li>⏰ Various rosters available</li>
+                    <li>🌱 Join a growing WA owned and operated company</li>
+                </ul>
+            </div>
+        </div>
+        <div class="nav-dots">
+            <span class="dot active" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+        <div class="full-ad-toggle">
+            <label for="fullAdToggle">Show Full Job Ad</label>
+            <input type="checkbox" id="fullAdToggle" onclick="toggleFullAd()">
+        </div>
+        <div class="full-job-ad" id="fullJobAd">
+            <h2>Full Job Description</h2>
+            <p><strong>About OHLMEC:</strong> OHLMEC provides project management and consulting, specialised maintenance, fabrication on and off site, construction support and structural integrity maintenance and repairs to a variety of clients across Western Australia.</p>
+            
+            <h3>Requirements:</h3>
+            <ul>
+                <li>Proven experience in a similar role</li>
+                <li>Ability to perform under pressure in a busy, fast-paced environment</li>
+                <li>Australian Recognised Trade Qualification (essential)</li>
+                <li>A current and valid manual Australian Driver's licence (essential)</li>
+                <li>Confined space, Working at heights and White Card (Boilermakers will also need Gas Test Atmospheres)</li>
+                <li>Advantageous: EWP, (LF) Forklift, Crane, and Basic rigging Tickets</li>
+                <li>NPC within 12 Months or willing to obtain</li>
+                <li>Provide a compliant drug and alcohol screen on request</li>
+            </ul>
+
+            <h3>Benefits:</h3>
+            <ul>
+                <li>Attractive remuneration</li>
+                <li>Join a growing WA owned and operated company</li>
+                <li>Opportunities for career development</li>
+                <li>Various rosters available</li>
+            </ul>
+
+            <p>To apply, please send applications to careers@ohlmec.com.au or to rob.hammond@ohlmec.com.au.</p>
+            <p>If you are interested in taking the next step in your career or simply feel like a change of scenery, please do not delay in applying as shortlisting will begin immediately.</p>
+        </div>
+        <a href="https://www.seek.com.au/Boilermaker-jobs/in-Kalgoorlie-WA-6430?jobId=78424467&type=standout" class="apply-button" target="_blank">Apply Now</a>
+    </div>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slide");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");  
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].classList.remove("active");
+            }
+            slides[slideIndex-1].classList.add("active");  
+            dots[slideIndex-1].classList.add("active");
+        }
+
+        function toggleFullAd() {
+            const fullJobAd = document.getElementById("fullJobAd");
+            const checkbox = document.getElementById("fullAdToggle");
+            fullJobAd.style.display = checkbox.checked ? "block" : "none";
+        }
+
+        // Auto-slide functionality
+        setInterval(() => {
+            plusSlides(1);
+        }, 5000); // Change slide every 5 seconds
+    </script>
+</body>
+</html>
